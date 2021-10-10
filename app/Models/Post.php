@@ -26,4 +26,10 @@ class Post extends Model
         return $this->hasMany(Image::class);
     }
 
+    //relación uno a muchos polimorfica
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
 }

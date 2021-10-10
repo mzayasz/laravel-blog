@@ -16,4 +16,10 @@ class Video extends Model
         $this->belongsTo(User::class);
     }
 
+    //relación uno a muchos polimorfica
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
 }
