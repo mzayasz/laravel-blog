@@ -14,4 +14,10 @@ class Comment extends Model
     {
         return $this->morphTo();
     }
+
+    //relación uno a muchos (invertida)
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
